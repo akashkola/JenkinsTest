@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'env'
-                echo "$PAYLOAD"
+                echo "$payload"
             }
         }
     }
