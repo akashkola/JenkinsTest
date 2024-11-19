@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    parameters {
+      text defaultValue: 'test', name: 'payload'
+    }
+    
     stages {
         stage('Hello') {
             agent {
@@ -11,6 +15,7 @@ pipeline {
             steps {
                 sh 'printenv'
                 sh 'env'
+                echo "$PAYLOAD"
             }
         }
     }
